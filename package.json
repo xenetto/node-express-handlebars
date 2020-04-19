@@ -1,7 +1,7 @@
 {
-  "name": "node-express-handlebars",
+  "name": "express-handlebars",
   "version": "1.0.0",
-  "description": "",
+  "description": "### Overview",
   "main": "server.js",
   "dependencies": {
     "dotenv": "^8.2.0",
