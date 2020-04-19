@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/burger_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
+  <title>Eat-Da-Burger!</title>
+</head>
+<body style="background-color: lightsalmon;">
+
+<div class="container" style="border:solid 0px;"> 
+  <div class="row">
+    <div class="col-12 text-center"><img  src="/assets/img/burger.png" width="150" height="100"/></div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      &nbsp; <!--style="border:solid 1px; padding-bottom: 50;"-->
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-12 text-center" style="border:solid 0px; padding-bottom: 50;">
+      <form class="create-form">
+        <div class="form-group">
+          <label for="burgerN">Burger Name:</label>&nbsp;<input type="text" id="burgerN" name="burger_name">
+           <button type="submit" class="btn btn-success btn-sm" style="padding-top: 0;">Add Burger</button>
+        </div>
+      </form>
+      <hr>
+    </div>
+  </div>
+ <div class="row" >
+		<div class="col-md-6 pink text-right">
+        <h6>Burgers that are not devoured!<hr></h6>
+        <ul style="list-style-type:none">
+          {{#each burgers}}
+            {{#unless devoured}}
+              {{> burgers/burger-ready devoured=false}}
+            {{/unless}}
+          {{/each}}
+        </ul>
+    </div>
+		<div class="col-md-6 pink text-left">
+        <h6>Burgers that are devoured!<hr></h6>
+        <ul style="list-style-type:none">
+          {{#each burgers}}
+            {{#if devoured}}
+              {{> burgers/burger-devoured devoured=true}}
+            {{/if}}
+          {{/each}}
+        </ul>
+    </div>
+	</div>
+
+</div>
+</body>
+</html>
+
+
+
+
